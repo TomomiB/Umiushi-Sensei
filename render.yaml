@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: umiushi-sensei
+    runtime: python
+    buildCommand: |
+      cd frontend && npm install && npm run build
+    startCommand: |
+      cd backend && python app.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
+    buildFilter:
+      paths:
+        - backend/**
+        - frontend/**
+    staticPublishPath: frontend/dist
