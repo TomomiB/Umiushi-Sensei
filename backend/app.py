@@ -6,7 +6,7 @@ from tensorflow.keras.preprocessing import image
 import numpy as np
 import pickle
 
-app = Flask(__name__, static_folder='../umiushi-sensei/dist', static_url_path='')
+app = Flask(__name__, static_folder='dist', static_url_path='')
 
 # Load model and label encoder
 model_path = "sea_slug_classifier.h5"
